@@ -1,8 +1,24 @@
-import React from 'react'
+import {useEffect, useState } from "react"
+import { pedirItemPorId } from "../../helpers/pedirDatos"
+import ItemDetail from "../ItemDetail/ItemDetail"
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = ({itemId}) => {
+
+    const [item, setItem] = useState(null)
+
+    useEffect(() => {
+        pedirItemPorId(itemId)
+
+        .then ((res) => {
+            setItem(res)
+        })
+    }, [itemId])
+    
+
   return (
-    <div>ItemDetailContainer</div>
+    <div>
+        {item && <ItemDetail item={item}/>}
+    </div>
   )
 }
 
