@@ -30,6 +30,9 @@ function NavBar() {
         <li className="nav-item">
           <Link className="nav-link active" aria-current="page" to="/nosotros" >Nosotros</Link>
         </li>
+        <li className="nav-item">
+          <Link className="nav-link active" aria-current="page" to="/contacto">Contacto</Link>
+        </li>
       </ul>
     </div>
   </div>
