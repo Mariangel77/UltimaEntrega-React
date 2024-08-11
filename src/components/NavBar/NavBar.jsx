@@ -1,48 +1,24 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import CartWidget from '../CartWidget/CartWidget'
+import CartWidget from './CartWidget'
 
-function NavBar() {
+const Navbar = () => {
   return (
-    <div>
-        <nav className="navbar navbar-expand-lg bg-body-tertiary">
-  <div className="container-fluid">
-    <Link to="/" className="navbar-brand">MolinaShop</Link>
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-        <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to="/" >Inicio</Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to="/productos/madias">Medias</Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link active" aria-current="page"to="/productos/pantalones">Pantalones</Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to="/productos/remeras" >Remeras</Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to="/productos/buzos" >Buzos</Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to="/nosotros" >Nosotros</Link>
-        </li>
-        <li className="nav-item">
-        <Link className="nav-link active" aria-current="page" to="/contacto">Contacto</Link>
-        </li>
-        <li className="nav-item">
-         <CartWidget/>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-    </div>
+    <nav className="navbar">
+        <Link to="/" className="logo"><h1>Carpishop</h1></Link>
+        <ul className="menu">
+            <li><Link className="menu-link" to="/">Inicio</Link></li>
+            <li><Link className="menu-link" to="/productos">Productos</Link></li>
+            <li><Link className="menu-link" to="/productos/medias">Medias</Link></li>
+            <li><Link className="menu-link" to="/productos/pantalones">Pantalones</Link></li>
+            <li><Link className="menu-link" to="/productos/remeras">Remeras</Link></li>
+            <li><Link className="menu-link" to="/productos/buzos">Buzos</Link></li>
+            <li><Link className="menu-link" to="/nosotros">Nosotros</Link></li>
+            <li><Link className="menu-link" to="/contacto">Contacto</Link></li>
+            <li><CartWidget /></li>
+        </ul>
+    </nav>
   )
 }
 
-export default NavBar
+export default Navbar

@@ -1,4 +1,4 @@
-import { useForm } from "react-hook-form"
+import { useForm } from "react-hook-form";
 
 const Contacto = () => {
 
@@ -9,6 +9,7 @@ const Contacto = () => {
     }
 
   return (
+
     <div className="container">
         <h1 className="main-title">Contacto</h1>
         <form className="formulario" onSubmit={handleSubmit(enviar)}>
@@ -21,6 +22,7 @@ const Contacto = () => {
 
         </form>
     </div>
+
   )
 }
 
