@@ -1,40 +1,37 @@
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
-import ItemListContainer from './components/ItemListContainer/ItemListContainer'
-import NavBar from './components/NavBar/NavBar'
-import './App.css'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Nosotros from './components/Nosotros/Nosotros'
-import Contacto from './components/Contacto/Contacto'
-import { CartProvider } from './context/CartContext'
-import Carrito from './components/Carrito/Carrito'
-
+import Contacto from "./components/Contacto";
+import ItemDetailContainer from "./components/ItemDetailContainer";
+import ItemListContainer from "./components/ItemListContainer";
+import Navbar from "./components/Navbar";
+import Nosotros from "./components/Nosotros";
+import "./main.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { CartProvider } from "./context/CartContext";
+import Carrito from "./components/Carrito";
+import Checkout from "./components/Checkout";
 
 function App() {
-
-  
   return (
-      <div>
-
-        <CartProvider>
+    <div>
+      <CartProvider>
         <BrowserRouter>
 
-           <NavBar/>
+          <Navbar />
 
-           <Routes>
-            <Route path= "/" element={<ItemListContainer/>}/>
-            <Route path= "/item/:id" element={<ItemDetailContainer/>}/>
-            <Route path= "/productos" element={<ItemDetailContainer/>}/>
-            <Route path= "/productos/:categoria" element={<ItemDetailContainer/>}/>
-            <Route path= "/nosotros" element={<Nosotros/>}/>
-            <Route path= "/contacto" element={<Contacto/>}/>
-            <Route path= "/carrito" element={<Carrito/>}/>
-           </Routes>
-
-
+          <Routes>
+            <Route path="/" element={<ItemListContainer />} />
+            <Route path="/item/:id" element={<ItemDetailContainer />}/>
+            <Route path="/productos" element={<ItemListContainer />} />
+            <Route path="/productos/:categoria" element={<ItemListContainer />} />
+            <Route path="/nosotros" element={<Nosotros />}/>
+            <Route path="/contacto" element={<Contacto />}/>
+            <Route path="/carrito" element={<Carrito />}/>
+            <Route path="/checkout" element={<Checkout />}/>
+          </Routes>
+          
         </BrowserRouter>
-        </CartProvider>
-      </div>
-  )
+      </CartProvider>
+    </div>
+  );
 }
 
-export default App
+export default App;
